@@ -7,6 +7,6 @@ require('./middleware')(app);
 // add database connection
 require('./db');
 // add routes
-// require('./routes')(app);
+require('./routes')(app);
 
 module.exports = app;

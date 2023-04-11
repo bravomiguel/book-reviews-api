@@ -1,5 +1,6 @@
 // grab mongoose Schema method
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;;
 
 // define schema
 const bookSchema = Schema({

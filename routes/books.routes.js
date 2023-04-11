@@ -1,3 +1,4 @@
+// const path = require("path");
 // grab express router method
 const express = require('express');
 const router = express.Router();
@@ -11,7 +12,7 @@ const {
 
 // define routes with router
 router
-    .get('/:id', getBooks)
+    .get('/:id?', getBooks)
     .post('/', addBook)
     .put('/:id', updateBook)
     .delete('/:id', removeBook);

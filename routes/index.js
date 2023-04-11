@@ -1,7 +1,9 @@
+// const path = require("path");
+
 module.exports = function (app) {
   // base endpoint components
   const API_ENDPOINT = '/api';
-  const API_VERSION = '/v1';
+  const API_VERSION = 'v1';
   // books route
   app.use(`${API_ENDPOINT}/${API_VERSION}/books`, require('./books.routes'));
   // any other malformed route
