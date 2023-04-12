@@ -1,7 +1,11 @@
 require('dotenv').config();
-const server = require('./server');
+const app = require('./server');
 
 const { PORT = 3333, NODE_ENV = 'development' } = process.env;
+
+const server = app.listen(PORT, () => {
+  console.log(`Listening on port http://localhost:${PORT}`);
+});
 
 process.on('uncaughtException', err => {
   console.log(`Uncaught Exception: ${err.message}`)
@@ -23,7 +27,3 @@ process.on('SIGINT', _ => {
     process.exit(0)
   }, 1000).unref() // Prevents the timeout from registering on event loop
 })
-
-server.listen(PORT, () => {
-  console.log(`Listening on port http://localhost:${PORT}`);
-});
